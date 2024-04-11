@@ -1,8 +1,5 @@
 name: DockerOVPN Dockerfile workflow
-on: 
-  pull_request:
-    branches:
-      - 'feature/**'
+on: pull_request
 env:
   AWS_REGION : "us-west-2"
   ECR_REPOSITORY: nimbux911/dockovpn
