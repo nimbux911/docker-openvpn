@@ -1,4 +1,4 @@
-name: Jenkins slave Dockerfile workflow
+name: DockerOVPN Dockerfile workflow
 on: 
   pull_request:
     branches:
