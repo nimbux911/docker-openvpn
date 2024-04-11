@@ -1,0 +1,19 @@
+name: Jenkins slave Dockerfile workflow
+on: 
+  pull_request:
+    branches:
+      - 'feature/**'
+env:
+  AWS_REGION : "us-west-2"
+  ECR_REPOSITORY: nimbux911/dockovpn
+  VERSION: 1.1.0
+permissions:
+      id-token: write
+      contents: read
+jobs:
+  DockerfileUpload:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: test1
+        run: |
+          echo "hello world!"
