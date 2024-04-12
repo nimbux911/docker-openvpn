@@ -7,7 +7,7 @@ on:
 env:
   AWS_REGION : "us-east-1"
   ECR_REPOSITORY: nimbux911/dockovpn
-  VERSION: 1.1.0
+  VERSION: 2.6.8-config.0.1.0
 permissions:
       id-token: write
       contents: read
@@ -38,7 +38,7 @@ jobs:
           echo "printing current branch name"
           echo ${GITHUB_REF_NAME}
 
-          if [ "$GITHUB_REF_NAME" = "master" ]
+          if [ "${GITHUB_REF_NAME}" = "master" ]
           then
             docker push $ECR_REGISTRY/$ECR_REPOSITORY:$VERSION
           fi
