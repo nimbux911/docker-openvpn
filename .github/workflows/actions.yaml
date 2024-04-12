@@ -36,7 +36,7 @@ jobs:
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$VERSION .
 
           echo "printing current branch name"
-          echo ${GITHUB_REF}
+          echo ${GITHUB_REF_NAME}
 
           if [ "$GITHUB_REF_NAME" = "master" ]
           then
