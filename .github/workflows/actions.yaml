@@ -34,3 +34,11 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$VERSION .
+
+          echo "printing current branch name"
+          echo $GITHUB_REF_NAME
+
+          if [ "$GITHUB_REF_NAME" = "master" ]
+          then
+            docker push $ECR_REGISTRY/$ECR_REPOSITORY:$VERSION
+          done
